@@ -28,6 +28,8 @@ COMPANY_KVK_NUM = str(os.getenv('COMPANY_KVK_NUM'))
 COMPANY_BTW_NUM = str(os.getenv('COMPANY_BTW_NUM'))
 COMPANY_TOPTEXT = str(os.getenv('COMPANY_TOPTEXT'))
 COMPANY_IBAN = str(os.getenv('COMPANY_IBAN'))
+COMANY_LOGO_WIDTH = str(os.getenv('COMANY_LOGO_WIDTH'))
+COMPANY_FILL_COLOR = str(os.getenv('COMPANY_FILL_COLOR'))
 
 # DEV variables
 DEV_EMPTY_AMOUNT = os.getenv('DEV_EMPTY_AMOUNT')
@@ -214,7 +216,7 @@ def save_pdf(pdf, gui):
     doc = Document(geometry_options=geometry_options)
 
     doc.append(NoEscape(r'''
-        \definecolor{fill_color}{HTML}{063970}
+        \definecolor{fill_color}{HTML}{'''+COMPANY_FILL_COLOR+'''}
     '''))
 
     header = PageStyle("header")
@@ -231,7 +233,7 @@ def save_pdf(pdf, gui):
             block.append(LineBreak())
             block.append(COMPANY_POSTAL + ", " + COMPANY_CITY)
         with doc.create(Figure(position='h!')) as logo_image:
-            logo_image.add_image(image_logo, width='200px', placement='')
+            logo_image.add_image(image_logo, width=COMANY_LOGO_WIDTH, placement='')
 
     with doc.create(TextBlock(5, 1, 0)) as block:
         block.append(NoEscape(r'\raggedright'))
@@ -258,7 +260,7 @@ def save_pdf(pdf, gui):
     with doc.create(TikZ()):
         doc.append(NoEscape(r'''
             \begin{scope}[transform canvas={rotate=-30, anchor=south east}]
-                \fill[fill_color] ([xshift=10cm, yshift=10cm]current page.south east) rectangle ++(-50cm,0.5cm);
+                \fill[fill_color] ([xshift=12cm, yshift=8cm]current page.south east) rectangle ++(-50cm,0.5cm);
             \end{scope}
         '''))
 
