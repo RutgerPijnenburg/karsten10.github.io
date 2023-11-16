@@ -1,5 +1,4 @@
-# Automatic-Invoices for Chronos
-
+# BatchInventory for the IoT course
 ## Installation
 Check if you have python installed first, you can do this with:
 ` python --version `
