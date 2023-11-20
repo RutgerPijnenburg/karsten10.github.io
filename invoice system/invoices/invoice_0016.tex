@@ -1,0 +1,105 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=2cm,lmargin=1cm,rmargin=1cm,bmargin=2cm}%
+\usepackage{textpos}%
+\usepackage{graphicx}%
+\usepackage{tikz}%
+\usepackage{ragged2e}%
+\usepackage{tabularx}%
+\usepackage{fancyhdr}%
+%
+\fancypagestyle{header}{%
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+\fancyhead{%
+}%
+\fancyfoot{%
+}%
+\fancyhead[L]{%
+}%
+\fancyfoot[L]{%
+Geliefde binnen 14 dagen te betalen op NL28ABNA000000%
+}%
+}%
+%
+\begin{document}%
+\normalsize%
+
+        \definecolor{fill_color}{HTML}{063970}
+    %
+\begin{textblock}{5}%
+(8, 0.3)%
+\noindent%
+\raggedright%
+\textbf{Chronos}%
+\linebreak%
+\textit{Eindhoven Student Debate Association}%
+\linebreak%
+De Straat 12%
+\linebreak%
+3421AB, Terneuzen%
+\end{textblock}%
+
+
+\begin{figure}[h!]%
+%
+\includegraphics[width=200px]{C:/Users/20213439/Desktop/Automatic-Invoices/libraries/../images/placeholder/Chronos_Logo.png}%
+\end{figure}
+
+%
+\begin{textblock}{5}%
+(1, 0)%
+\noindent%
+\raggedright%
+Karsten Stolk%
+\linebreak%
+de Straat 12%
+\linebreak%
+1234AB, Terneuzen%
+\end{textblock}%
+\pagestyle{header}%
+\begin{tikzpicture}%
+
+            \begin{scope}[transform canvas={rotate=70, anchor=south east}]
+                \fill[fill_color] ([xshift=0cm, yshift=-25cm]current page.south east) rectangle ++(-50cm,1cm);
+            \end{scope}
+        %
+\end{tikzpicture}%
+\begin{tikzpicture}%
+
+            \begin{scope}[transform canvas={rotate=-30, anchor=south east}]
+                \fill[fill_color] ([xshift=10cm, yshift=10cm]current page.south east) rectangle ++(-50cm,0.5cm);
+            \end{scope}
+        %
+\end{tikzpicture}%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabularx}{\textwidth}{XXXXX}%
+\textbf{Factuurnummer}&\textbf{Factuurdatum}&\textbf{Vervaldatum}&\textbf{BTW Nummer}&\textbf{KVK Nummer}\\%
+0016&September 13, 2023&November 13, 2023&NL123456789B01&9305 6589\\%
+\end{tabularx}%
+\linebreak%
+\linebreak%
+\linebreak%
+\linebreak%
+\begin{tabularx}{\textwidth}{lXlll}%
+\textbf{\#}&\textbf{Omschrijving}&\textbf{Prijs}&\textbf{Bedrag}&\textbf{Btw}\\%
+\hline%
+&&\textbf{Subtotaal}&€ 0.00&\\%
+&&incl. BTW&€ 0.00 \\ \cline{3-4}&\\%
+\end{tabularx}%
+\end{minipage}%
+\end{document}
